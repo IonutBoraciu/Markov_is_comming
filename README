@@ -1,0 +1,57 @@
+Boraciu Ionut-Sorin 315CA
+
+Exercitiul 1 :
+	- parse_labyrinth : citesc fiecare linie pe rand, 
+	apoi convertesc elementele inapoi in numere si le adaug in matrice, pentru a evita
+	folosirea functiei instabile dlmread.
+
+	- get_adjancency_matrix : folosind functia bitand verific care dintre biti sunt 
+	setati pe 1 pentru a stii unde este prezent un perete si unde nu, in functie de acest
+	lucru realizez matricea de adiacenta.
+
+	- get_link_matrix aceasi functionalitate ca si get_adjancency_matrix, dar retin 
+	intr-un vector cate valori de 1 am pe fiecare linie pentru a imparti fiecare element 
+	la numarul de elemente de pe linia respectiva.
+
+	- get_jacaboi_paramaters : extrag simplu parametrii Jacobi.
+
+	- perform_iterative : aplic algoritmul invatat la laborator pentru Jacobi.
+	
+	- heuristic_greedy : folosindu-ma de un vector path retin elementele cu cea mai mare 
+	probabilitate prin care trec pana ajung la finalul labirintului ( la state-ul WIN)
+	
+	- decode_path : functie simpla care transforma valorile primite dupa heuristic greedy
+	inapoi in indici
+	
+Exercitiul 2 :
+	- parse_date_set_file : acelasi mod de functionare ca si parse_labyrinth
+	
+	- prepare_for_regression : primesc o matrice de tip cell si in functie de semnificatia
+	string-urilor salvate adaug elemente in matricea FeatureMatrix, asta in cazul 
+	sirurilor de caractere, iar daca intalnesc un numar il adaug direct ( dupa ce il 
+	transform in tip numeric cu functia str2num)
+	
+	- parse_csv_file : acelasi mod de functionare ca si parse_labyrinth si
+	parse_date_set_file doar ca elementele sunt despartite printr-o virgula si nu stiu 
+	cate linii am deci citesc pana numai gasesc nimic de citit.
+	
+	- functiile de cost sunt construite in acelasi fel, dar formula folosita pentru a 
+	calcula eroarea este diferita.
+	
+	- aplic algoritmul gradientului conjugat prezentat in enuntul temei.
+	
+	- parcurg numarul de iteratii calculand in functie de GradienT, Theta la fiecare pas.
+	
+Exercitiul 3 :
+	- load_dataset : Intrucat fisierul este de tipul .mat pot folosi functia load care
+	incarca automat in memorie matricele.
+	
+	- split_dataset: in functie de procentul dat voi atribui o parte din elemente dupa ce 
+	amestec indicii spre vectorul de invatare si spre cel de test.
+	
+	- initialize_weights : aplic direct formula data, pentru a calcula matricea
+	
+	-  cost_function : ma folosesc de algoritmul prezentat pentru backward propagation
+	
+	- predict classes : aplic algoritmul prezentat, si anume forward propagation.
+	
